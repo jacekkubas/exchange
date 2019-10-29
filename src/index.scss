@@ -1,5 +1,7 @@
-@import './variables';
+@import './sass/variables';
+@import './sass/base';
 
 @import './components/app/app';
 @import './components/form/form';
 @import './components/output/output';
+@import './components/label/label';
