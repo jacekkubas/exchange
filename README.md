@@ -1,4 +1,4 @@
-#Exchange application.
+# Exchange application.
 
 Convert any amount of Polish Zlotys (PLN) to currency of choice. To provide correct results data is fetched from National Polish Bank API.
 
