@@ -1,11 +1,11 @@
 import React from 'react';
 import Output from '../output';
+import Label from '../label';
 
 class Form extends React.Component {
   state = {
     data: [],
     currency1: 0,
-    currency1Symbol: 'pln',
     currency2: 0,
     currency2Symbol: ''
   }
@@ -27,10 +27,6 @@ class Form extends React.Component {
       })
   }
 
-  componentDidUpdate () {
-    console.log(this.state)
-  }
-
   componentDidMount() {
     fetch(`http://api.nbp.pl/api/exchangerates/tables/a/last`)
       .then(response => response.json())
@@ -42,22 +38,21 @@ class Form extends React.Component {
   }
 
   render() {
-    const { 
+    const {
       currency1,
-      currency1Symbol,
-      currency2, 
+      currency2,
       currency2Symbol,
       data
     } = this.state;
 
     return (
       <form className="form">
-        <div className="form__input-wrapper">
-          <label className="form__label">{currency1Symbol}:</label>
+        <div className="form__item">
+          <Label text={'PLN amount'} />
           <input className="form__input" type="number" placeholder="amount" min="0" onChange={this.handleCurrency1} value={currency1} />
         </div>
-        <div className="form__input-wrapper">
-          <label className="form__label">To:</label>
+        <div className="form__item">
+          <Label text={'To'} />
           <select className="form__input" onChange={this.handleSelect} value={currency2Symbol}>
             <option value="">Choose currency</option>
             {data.length &&
@@ -67,9 +62,7 @@ class Form extends React.Component {
             }
           </select>
         </div>
-        {currency1 > 0 && currency2 > 0 &&
-          <Output currency1={currency1} currency1Symbol={currency1Symbol} currency2={currency2} currency2Symbol={currency2Symbol} />
-        }
+        <Output currency1={currency1} currency2={currency2} currency2Symbol={currency2Symbol} />
       </form>
     );
   }

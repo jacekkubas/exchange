@@ -2,11 +2,12 @@
   width: 400px;
   max-width: 100%;
   margin: auto;
-  background-color: $color-light;
+  background-color: rgba($color-light, 0.7);
   padding: 40px 30px 50px;
   border-radius: 4px;
+  box-shadow: 0 0 10px rgba($color-dark, 0.2);
 
-  &__input-wrapper {
+  &__item {
     margin-bottom: 15px;
 
     &:last-child {
@@ -14,17 +15,13 @@
     }
   }
 
-  &__label {
-    display: block;
-    margin-bottom: 3px;
-  }
-
   &__input {
     box-sizing: border-box;
     width: 100%;
     padding: 15px 5px;
     border-radius: 4px;
-    border: solid 1px $color-medium;
+    border: solid 1px $color-dark;
+    background-color: transparent;
 
     &:focus {
       outline: none;

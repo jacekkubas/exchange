@@ -1,5 +1,7 @@
 .output {
   margin-top: 30px;
-  border: solid 1px $color-medium;
+  border: solid 1px $color-dark;
   padding: 5px 10px;
+  min-height: 35px;
+  box-sizing: border-box;
 }
