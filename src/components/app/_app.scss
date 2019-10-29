@@ -1,0 +1,16 @@
+.app {
+  width: 800px;
+  max-width: 100%;
+  margin: auto;
+  padding: 50px 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+
+  &__heading {
+    font-size: 36px;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
